@@ -3,16 +3,18 @@
 This is a very basic tool to make creating utterance strings for the Amazon Echo easier. Create utterances with variables that accept up to 22 words!
 
 # Installation
-Until this is available via npm, download this repository, and then follow these steps
+Until this is available via npm, follow these steps to clone this repo and install
 ```
-cd /path/to/repository
-npm install -g .
+$ mkdir /path/to/repository
+$ cd /path/to/repository
+$ git clone git@github.com:mduleone/MakeUtterance.git .
+$ npm install -g .
 ```
 
 # Usage
 
 ```
-makeUtterance "intent name" "utterance string" "file name"
+$ makeUtterance "intent name" "utterance string" "file name"
 ```
 ### Variables
 To indicate a variable in the `utterance string`, place the identifier `%'max words''variable name'`.
