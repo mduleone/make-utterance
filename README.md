@@ -24,6 +24,8 @@ For example, `%8eightWordTerm`
 ### Basic Usage
 ```
 $ makeUtterance "Dictionary" "define %8term" "utterances.txt"
+Appended utterances to utterances.txt
+
 $ cat utterances.txt
 Dictionary define {this|term}
 Dictionary define {this is|term}
@@ -38,6 +40,8 @@ Dictionary define {this is a long sentence that gets longer|term}
 Running the command with a new utterance but specifying the same file appends to the file
 ```
 $ makeUtterance "Dictionary" "please define %8term" "utterances.txt"
+Appended utterances to utterances.txt
+
 $ cat utterances.txt
 Dictionary define {this|term}
 Dictionary define {this is|term}
@@ -61,6 +65,8 @@ You can include multiple variables in one utterance, so you're not limited to si
 
 ```
 $ makeUtterance "RobinHood" "Steal from %4prince and give to %4pauper" "robinhood.txt"
+Appended utterances to robinhood.txt
+
 $ cat robinhood.txt
 RobinHood Steal from {this|prince} and give to {this|pauper}
 RobinHood Steal from {this|prince} and give to {this is|pauper}
