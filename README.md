@@ -59,6 +59,7 @@ node index.js "RobinHood" "Steal from %4prince and give to %4pauper" "robinhood.
 ```
 Creates
 ```
+robinhood.txt
 RobinHood Steal from {this|prince} and give to {this|pauper}
 RobinHood Steal from {this|prince} and give to {this is|pauper}
 RobinHood Steal from {this|prince} and give to {this is a|pauper}
