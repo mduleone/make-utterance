@@ -19,7 +19,7 @@ To indicate a variable in the `utterance string`, place the identifier `%'max wo
 For example, `%8eightWordTerm`
 
 # Sample
-
+### Basic Usage
 ```
 $ makeUtterance "Dictionary" "define %8term" "utterances.txt"
 $ cat utterances.txt
@@ -32,7 +32,8 @@ Dictionary define {this is a long sentence that|term}
 Dictionary define {this is a long sentence that gets|term}
 Dictionary define {this is a long sentence that gets longer|term}
 ```
-Running the command with a new utterance but specifying the same file
+### Multiple Utterances
+Running the command with a new utterance but specifying the same file appends to the file
 ```
 $ makeUtterance "Dictionary" "please define %8term" "utterances.txt"
 $ cat utterances.txt
@@ -53,7 +54,7 @@ Dictionary please define {this is a long sentence that|term}
 Dictionary please define {this is a long sentence that gets|term}
 Dictionary please define {this is a long sentence that gets longer|term}
 ```
-
+### Multiple Variables
 You can include multiple variables in one utterance, so you're not limited to simple sentences
 
 ```
