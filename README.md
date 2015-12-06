@@ -14,7 +14,7 @@ npm install -g .
 ```
 makeUtterance "intent name" "utterance string" "file name"
 ```
-## Variables
+### Variables
 To indicate a variable in the `utterance string`, place the identifier `%'max words''variable name'`.
 For example, `%8eightWordTerm`
 
