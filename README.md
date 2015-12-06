@@ -17,13 +17,13 @@ $ npm install -g .
 $ makeUtterance "intent name" "utterance string" "file name"
 ```
 ### Variables
-To indicate a variable in the `utterance string`, place the identifier `%'max words''variable name'`.
-For example, `%8eightWordTerm`
+To indicate a variable in the `utterance string`, place the identifier `{test words|variable-name}`.
+For example, `{these are test words|variableName}`
 
 # Sample
 ### Basic Usage
 ```
-$ makeUtterance "Dictionary" "define %8term" "utterances.txt"
+$ makeUtterance "Dictionary" "define {this is a long sentence that gets longer|term}" "utterances.txt"
 Appended utterances to utterances.txt
 
 $ cat utterances.txt
@@ -39,7 +39,7 @@ Dictionary define {this is a long sentence that gets longer|term}
 ### Multiple Utterances
 Running the command with a new utterance but specifying the same file appends to the file
 ```
-$ makeUtterance "Dictionary" "please define %8term" "utterances.txt"
+$ makeUtterance "Dictionary" "please define {this is a long sentence that gets longer|term}" "utterances.txt"
 Appended utterances to utterances.txt
 
 $ cat utterances.txt
@@ -64,24 +64,23 @@ Dictionary please define {this is a long sentence that gets longer|term}
 You can include multiple variables in one utterance, so you're not limited to simple sentences
 
 ```
-$ makeUtterance "RobinHood" "Steal from %4prince and give to %4pauper" "robinhood.txt"
-Appended utterances to robinhood.txt
+$ makeUtterance "ZipCode" "My Zip code is {one two three four five|zip} and my area code is {one two three|area}." "zip.txt"
+Appended utterances to zip.txt
 
-$ cat robinhood.txt
-RobinHood Steal from {this|prince} and give to {this|pauper}
-RobinHood Steal from {this|prince} and give to {this is|pauper}
-RobinHood Steal from {this|prince} and give to {this is a|pauper}
-RobinHood Steal from {this|prince} and give to {this is a long|pauper}
-RobinHood Steal from {this is|prince} and give to {this|pauper}
-RobinHood Steal from {this is|prince} and give to {this is|pauper}
-RobinHood Steal from {this is|prince} and give to {this is a|pauper}
-RobinHood Steal from {this is|prince} and give to {this is a long|pauper}
-RobinHood Steal from {this is a|prince} and give to {this|pauper}
-RobinHood Steal from {this is a|prince} and give to {this is|pauper}
-RobinHood Steal from {this is a|prince} and give to {this is a|pauper}
-RobinHood Steal from {this is a|prince} and give to {this is a long|pauper}
-RobinHood Steal from {this is a long|prince} and give to {this|pauper}
-RobinHood Steal from {this is a long|prince} and give to {this is|pauper}
-RobinHood Steal from {this is a long|prince} and give to {this is a|pauper}
-RobinHood Steal from {this is a long|prince} and give to {this is a long|pauper}
+$ cat zip.txt
+ZipCode My Zip code is {one|zip} and my area code is {one|area}.
+ZipCode My Zip code is {one|zip} and my area code is {one two|area}.
+ZipCode My Zip code is {one|zip} and my area code is {one two three|area}.
+ZipCode My Zip code is {one two|zip} and my area code is {one|area}.
+ZipCode My Zip code is {one two|zip} and my area code is {one two|area}.
+ZipCode My Zip code is {one two|zip} and my area code is {one two three|area}.
+ZipCode My Zip code is {one two three|zip} and my area code is {one|area}.
+ZipCode My Zip code is {one two three|zip} and my area code is {one two|area}.
+ZipCode My Zip code is {one two three|zip} and my area code is {one two three|area}.
+ZipCode My Zip code is {one two three four|zip} and my area code is {one|area}.
+ZipCode My Zip code is {one two three four|zip} and my area code is {one two|area}.
+ZipCode My Zip code is {one two three four|zip} and my area code is {one two three|area}.
+ZipCode My Zip code is {one two three four five|zip} and my area code is {one|area}.
+ZipCode My Zip code is {one two three four five|zip} and my area code is {one two|area}.
+ZipCode My Zip code is {one two three four five|zip} and my area code is {one two three|area}.
 ```
