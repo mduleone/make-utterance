@@ -18,7 +18,7 @@ $ makeUtterance "intent name" "utterance string" "file name"
 ```
 ### Variables
 To indicate a variable in the `utterance string`, place the identifier `{test words|variable-name}`.
-For example, `{these are test words|variableName}`
+For example, `{these are test words|fourWordTerm}`
 
 # Sample
 ### Basic Usage
