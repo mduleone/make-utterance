@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Helper to create the utterance strings for an Amazon Echo skill",
   "main": "index.js",
+  "bin": {
+    "makeUtterance": "bin/default.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

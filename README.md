@@ -2,22 +2,27 @@
 
 This is a very basic tool to make creating utterance strings for the Amazon Echo easier. Create utterances with variables that accept up to 22 words!
 
+# Installation
+Until this is available via npm, download this repository, and then follow these steps
+```
+cd /path/to/repository
+npm install -g .
+```
+
 # Usage
 
-Downlaod this repository. In the same directory, run the following command:
 ```
-node index.js intentName utteranceString fileName
+makeUtterance "intent name" "utterance string" "file name"
 ```
-In the `utteranceString` string, place the identifier `%'max words''variable name'` where you want your variables
+## Variables
+To indicate a variable in the `utterance string`, place the identifier `%'max words''variable name'`.
+For example, `%8eightWordTerm`
 
 # Sample
 
 ```
-node index.js "Dictionary" "define %8term" "utterances.txt"
-```
-creates
-```
-utterances.txt:
+$ makeUtterance "Dictionary" "define %8term" "utterances.txt"
+$ cat utterances.txt
 Dictionary define {this|term}
 Dictionary define {this is|term}
 Dictionary define {this is a|term}
@@ -29,11 +34,8 @@ Dictionary define {this is a long sentence that gets longer|term}
 ```
 Running the command with a new utterance but specifying the same file
 ```
-node index.js "Dictionary" "please define %8term" "utterances.txt"
-```
-appends to the file
-```
-utterances.txt:
+$ makeUtterance "Dictionary" "please define %8term" "utterances.txt"
+$ cat utterances.txt
 Dictionary define {this|term}
 Dictionary define {this is|term}
 Dictionary define {this is a|term}
@@ -55,11 +57,8 @@ Dictionary please define {this is a long sentence that gets longer|term}
 You can include multiple variables in one utterance, so you're not limited to simple sentences
 
 ```
-node index.js "RobinHood" "Steal from %4prince and give to %4pauper" "robinhood.txt"
-```
-Creates
-```
-robinhood.txt
+$ makeUtterance "RobinHood" "Steal from %4prince and give to %4pauper" "robinhood.txt"
+$ cat robinhood.txt
 RobinHood Steal from {this|prince} and give to {this|pauper}
 RobinHood Steal from {this|prince} and give to {this is|pauper}
 RobinHood Steal from {this|prince} and give to {this is a|pauper}
