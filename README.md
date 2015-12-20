@@ -36,16 +36,6 @@ Dictionary define {this is a long sentence that|term}
 Dictionary define {this is a long sentence that gets|term}
 Dictionary define {this is a long sentence that gets longer|term}
 ```
-### Custom Slots
-Custom slots work great with this tool. Unless you specify a variable name with a pipe, the tool will ignore the `{customSlot}` indicated by curly braces.
-```
-$ makeUtterance "PokemonByName" "tell me about {Pokemon}" "pokemon.txt"
-Appended utterances to pokemon.txt
-
-$ cat pokemon.txt
-PokemonByName tell me about {Pokemon}
-```
-
 ### Multiple Utterances
 Running the command with a new utterance but specifying the same file appends to the file
 ```
@@ -69,6 +59,15 @@ Dictionary please define {this is a long sentence|term}
 Dictionary please define {this is a long sentence that|term}
 Dictionary please define {this is a long sentence that gets|term}
 Dictionary please define {this is a long sentence that gets longer|term}
+```
+### Custom Slots
+Custom slots work great with this tool. Unless you specify a variable name with a pipe, the tool will ignore the `{customSlot}` indicated by curly braces.
+```
+$ makeUtterance "PokemonByName" "tell me about {Pokemon}" "pokemon.txt"
+Appended utterances to pokemon.txt
+
+$ cat pokemon.txt
+PokemonByName tell me about {Pokemon}
 ```
 ### Multiple Variables
 You can include multiple variables in one utterance, so you're not limited to simple sentences
