@@ -1,6 +1,6 @@
 # About
 
-This is a very basic tool to make creating utterance strings for the Amazon Echo easier. Create utterances with variables that accept up to 22 words!
+This is a very basic tool to make creating utterance strings for the Amazon Echo easier.
 
 # Installation
 Until this is available via npm, follow these steps to clone this repo and install
@@ -36,6 +36,16 @@ Dictionary define {this is a long sentence that|term}
 Dictionary define {this is a long sentence that gets|term}
 Dictionary define {this is a long sentence that gets longer|term}
 ```
+### Custom Slots
+Custom slots work great with this tool. Unless you specify a variable name with a pipe, the tool will ignore the `{customSlot}` indicated by curly braces.
+```
+$ makeUtterance "Pokemon" "tell me about {Pokemon}" "pokemon.txt"
+Appended utterances to pokemon.txt
+
+$ cat pokemon.txt
+Pokemon tell me about {Pokemon}
+```
+
 ### Multiple Utterances
 Running the command with a new utterance but specifying the same file appends to the file
 ```
