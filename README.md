@@ -3,12 +3,8 @@
 This is a very basic tool to make creating utterance strings for the Amazon Echo easier.
 
 # Installation
-Until this is available via npm, follow these steps to clone this repo and install
 ```
-$ mkdir /path/to/repository
-$ cd /path/to/repository
-$ git clone git@github.com:mduleone/MakeUtterance.git .
-$ npm install -g .
+$ npm install -g make-utterance
 ```
 
 # Usage
