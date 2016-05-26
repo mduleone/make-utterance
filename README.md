@@ -89,3 +89,6 @@ Appended utterances to pokemon.txt
 $ cat pokemon.txt
 PokemonByName tell me about {Pokemon}
 ```
+
+# License
+MIT
